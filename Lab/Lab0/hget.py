@@ -95,7 +95,6 @@ def connect_to_server(server_name):
     """
     
     ip_address = socket.gethostbyname(server_name)
-    
     sys.stderr.write("Contactando al servidor en %s...\n" % ip_address)
 
     # Crear socket
@@ -111,6 +110,8 @@ def connect_to_server(server_name):
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ip_address, HTTP_PORT))
+    return s
+
 
 def send_request(connection, url):
     """

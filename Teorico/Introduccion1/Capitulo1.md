@@ -28,11 +28,11 @@
 
     - **La [Internet](#la-internet)**: conecta computadoras entre si por medio de **proveedores de servicio de internet**.
 
-    - **La Nube**: Por medio de una **red de servidores** interconectados se **proveen servicios** a organizaciones o personas, como almacenamiento y ejecución de aplicaciones.
+    - **La [Nube](#la-nube)**: Por medio de una **red de servidores** interconectados se **proveen servicios** a organizaciones o personas, como almacenamiento y ejecución de aplicaciones.
 
-    - **La Internet de las cosas**: Dispositivos físicos llamados **dispositivos IoT** que se conectan a internet, comparten datos entre sí y con sistemas en la nube.
+    - **La [Internet de las cosas](#la-internet-de-las-cosas)**: Dispositivos físicos llamados **dispositivos IoT** que se conectan a internet, comparten datos entre sí y con sistemas en la nube.
 
-    - **Red Blockchain**: Conjunto de nodos interconectados usados para **mantener y validar** un registro digital descentralizado de **transacciones**.
+    - **La [Red Blockchain](#red-blockchain)**: Conjunto de nodos interconectados usados para **mantener y validar** un registro digital descentralizado de **transacciones**.
 
 ---
 

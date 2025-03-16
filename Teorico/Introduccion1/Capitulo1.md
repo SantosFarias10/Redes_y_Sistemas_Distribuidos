@@ -201,3 +201,108 @@ Ejemplo de una **Red de Internet**.
     - **Bases de Datos**: A diferencia de las bases de datos tradicionales que son centralizadas, la blockchain actúa como una base de datos distribuida donde hay nodos que mantienen una copia del registro, lo que mejora la seguridad y la transparencia.
 
 ---
+
+### Estructura de la Internet
+
+* Formada por billones de dispositivos de computación conectados entre sí.
+
+* Se ejecutan **aplicaciones de red**.
+
+* Red de redes que interconecta varias redes entre sí.
+
+* Para envío y recepción de mensajes entre computadoras se usan protocolos.
+
+* Hosts acceden a la internet a través de **proveedores de servicios de internet de acceso** (***ISPs de acceso***).
+
+* **Tipos de ISP de acceso**:
+
+    - Uso de **ISP residenciales**: compañías de cable, telefónicas, fibra a la casa (FTTH), etc.
+
+    - Uso de **ISP empresarial**: da acceso a sus empleados.
+
+    - Uso de **ISPs universitaria**: da acceso a docentes, estudiantes y personal.
+
+    - **ISPs que proveen acceso a WiFI**: aeropuertos, hoteles, restaurantes, etc.
+
+* **¿Cómo hacer para que dos hosts que están conectados a diferentes ISPs de acceso puedan enviarse paquetes entre sí?** ISPs de acceso deben estar interconectados.
+
+**Problema**: Dados miles de ISP de acceso, ¿cómo conectarlos entre sí?
+
+![Problema](../Imagenes/estructuraDeLaInternetProblema.png)
+
+**Idea**: conectar cada ISP de acceso a todo otro ISP de acceso. Esto se conoce como una **Malla**.
+
+![Idea](../Imagenes/estructuraDeLaInternetIdea.png)
+
+**Idea 2**: ¿Conectar cada ISP de acceso a un ISP global de tránsito? Las **ISP cliente** y **provedora** tienen acuerdo económico
+
+![Idea 2](../Imagenes/estructuraDeLaInternetIdea2.png)
+
+**Idea 3**: Es más conveniente tener ISPs globales de tránsito que conectan los ISP de acceso. **¿Por qué es más conveniente?**
+
+![Idea 3](../Imagenes/estructuraDeLaInternetIdea3.png)
+
+* Las ISP de acceso son interconectadas a través de redes ISP nacionales e internacionales de más alto nivel llamados **ISPs de capa superior** o **globales de tránsito**.
+
+    - Estas son ISP que proveen **servicios de tránsito** (pueden **competir entre si**).
+
+    - Una ISP de capa superior consiste de **enrutadores de alta velocidad** interconectados con **enlaces de fibra óptica** de alta velocidad.
+
+* **Conclusiones del Grafico**:
+
+    - Las ISP globales de tránsito deben estar interconectadas entre sí.
+
+    - Cada red ISP, ya sea de acceso o de capa superior, es manejada independientemente.
+
+**Problema**: Los ISP globales de tránsito no tienen presencia en cada ciudad o región del mundo. ¿Y esto qué implica? => Hay ISPs de acceso que no se pueden conectar a ISP globales.
+
+**Solución**: en una región puede haber un **ISP regional** al cual se conectan los ISP de acceso en la región.
+
+![Solución](../Imagenes/solucionDelProblema.png)
+
+* **Consecuencias de la Solución**:
+
+    - Luego cada ISP regional se conecta con ISPs globales de tránsito.
+
+    - Los ISP de acceso pagan al ISP regional al cual se conectan, y cada ISP regional paga al ISP global de tránsito al cual se conecta.
+
+    - En algunos lugares un ISP regional puede cubrir un país entero y a ese ISP regional se conectan otros ISP regionales.
+
+* Finalmente tenemos las redes proveedoras de contenido (por ejemplo, Google, Facebook, Microsoft, Apple, etc...).
+
+* **Estas redes se usan para**:
+
+    - Reducir pagos a redes de tránsito global.
+
+    - Tener control sobre cómo sus servicios son entregados a los usuarios finales.
+
+* **Las redes proveedoras de contenido se conectan a**:
+
+    - A ISP regionales e ISP de acceso.
+
+    - Podrían llegar a usar un ISP de tránsito si no lequeda otra.
+
+y redes proveedoras de contenido (e.g., Google, Microsoft, Akamai) pueden ejecutar su propia red, para traer servicios, y contenido cerca de los usuarios.
+
+![idk](../Imagenes/idk.png)
+
+![Estructura de la Internet](../Imagenes/estructuraDeLaInternet.png)
+
+* **“tier-1” ISPs comerciales**: (redes globales de tránsito), cobertura
+nacional e internacional.
+
+* Redes proveedoras de contenido
+
+* En el medio ISP regionales.
+
+* Finalmente ISPs de acceso
+
+* Otra forma de ver la estructura de la internet es como un conjunto de redes de distintos tamaños interconectadas entre sí:
+
+    - Así las redes pueden venir en diferentes tamaños, formas y cumplir distintos propósitos.
+
+    - Varias redes pueden interconectarse entre sí para formar redes más grandes.
+
+    - La internet es el ejemplo de red de redes más grande.
+
+---

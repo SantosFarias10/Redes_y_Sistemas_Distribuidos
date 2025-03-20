@@ -23,6 +23,19 @@ def obtener_peliculas():
 
 def obtener_pelicula(id):
     # Lógica para buscar la película por su ID y devolver sus detalles
+
+    """
+    recorremos el diccionario "peliculas"
+    encontramos la pelicula por su id
+    detenemos el bucle con break
+    y por ultimo convertimos los datos en un JSON
+    """
+
+    for peli in peliculas:
+        if peli['id'] == id:
+            pelicula_encontrada = peli
+            break
+
     return jsonify(pelicula_encontrada)
 
 

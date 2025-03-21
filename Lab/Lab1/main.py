@@ -61,16 +61,15 @@ def eliminar_pelicula(id):
     """
     Buscamos la pelicula a eliminar
     y cuando la encontramos usamos el metodo remove
-    retornamos un mensaje de exito si la pelicula se logro eliminar,
-    si no se imprime un mensaje de que no se puedo encontrar la pelicula
     """
 
     for peli in peliculas:
         if peli['id'] == id:
             peliculas.remove(peli)
-            return jsonify({'mensaje': 'Película eliminada correctamente'})
+            break
 
-    return jsonify({'Mensaje': 'Pelicula no encontrada'})
+    return jsonify({'mensaje': 'Película eliminada correctamente'})
+
 
 def obtener_nuevo_id():
     if len(peliculas) > 0:

@@ -14,15 +14,7 @@
 
     - **Ejemplos de Dispositivos**:
 
-        - Computadoras.
-
-        - Celulares.
-
-        - Impresoras.
-
-        - Dispositivos IoT
-
-        - etc ...
+        - Computadoras, Celulares, Impresoras, Dispositivos IoT, etc ...
 
 * Nos **enfocaremos** en los siguientes ejemplos de redes de dispositivos:
 
@@ -42,39 +34,15 @@
 
     - **LAN**: **red localizada** que conecta dispositivos dentro de un **área física** específica como:
     
-        - Casas. 
-        
-        - Oficinas.
-        
-        - Escuelas.
-        
-        - etc...
+        - Casas, Oficinas, Escuelas, etc...
 
     - Los **dispositivos en una LAN** incluyen: 
     
-        - Computadoras.
-        
-        - Impresoras.
-        
-        - Celulares.
-
-        - Televisores.
-        
-        - Conmutadores.
-        
-        - Puentes.
-        
-        - Y otros....
+        - Computadoras, Impresoras, Celulares, Televisores, Conmutadores, Puentes, Y otros....
 
     - Los **Proveedores de servicio de internet** (**PSI**): **proveen los servicios e infraestructura** necesarios para que los usuarios **conecten sus LAN a la internet más amplia**. **Manejan el tráfico de datos** entre usuarios y la red global. **Usan** dispositivos como **enrutadores** y **puertas de enlace**. **Facilitan la conexión** a través de varios medios incluyendo:
 
-        - Cable.
-        
-        - DSL.
-        
-        - Fibra óptica.
-        
-        - Y tecnologías inalámbricas.
+        - Cable, DSL, Fibra óptica, Y tecnologías inalámbricas.
 
 - En internet hay **aplicaciones de red** que permiten:
 
@@ -90,15 +58,15 @@
 
     - **Entretenimiento**: Distribución de contenidos de TV por suscripción (IPTV), juegos.
 
-![Ejemplo de la Internet](../Imagenes/laInternet.png)
+Ejemplo de una **Red de Internet**. =>
 
-Ejemplo de una **Red de Internet**.
+![Ejemplo de la Internet](../Imagenes/laInternet.png)
 
 * Para poder **aprovechar** y **gestionar** los distintos tipos de redes **se define el sistema operativo de red de la internet**. 
 
 ![Aplicaciones de Red](../Imagenes/aplicacionesDeRed.png)
 
-* En la internet para proveer servicios se crean **Aplicaciones de Red**.
+* Para proveer servicios en la internet se crea **Aplicaciones de Red**.
 
     - Para programarlas se usan **APIs** como los **sockets** y **middlewares** como **la web** y **llamadas a procedimientos remotos**. Estos últimos se basan en el sistema operativo de red. El SO de red se apoya en el hardware de redes de computadoras (rectángulo verde) que forman las LAN y los ISP.
 
@@ -144,19 +112,7 @@ Ejemplo de una **Red de Internet**.
 
 * **Las metas de la IoT**:
 
-    - **Automatización**.
-
-    - **Monitoreo**.
-
-    - **Optimización de recursos**.
-
-    - **Mejora de la vida cotidiana**.
-
-    - **Sostenibilidad ambiental**: reducir emisiones, reducir ruido.
-
-    - **Análisis de datos**.
-
-    - **Mejorar la seguridad física**.
+    - **Automatización**, **Monitoreo**, **Optimización de recursos**, **Mejora de la vida cotidiana**, **Sostenibilidad ambiental** (reducir emisiones, reducir ruido), **Análisis de datos**, **Mejorar la seguridad física**.
 
 ---
 

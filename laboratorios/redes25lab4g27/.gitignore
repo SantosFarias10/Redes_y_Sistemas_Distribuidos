@@ -1,0 +1,9 @@
+results/
+out/
+.project
+.qtenvrc
+*.anf
+*.omnet
+*_m.cc
+*.h
+*.log

@@ -1,0 +1,16 @@
+results/*
+results/
+.qtenvrc
+out/clang-release/
+.settings/
+*.swp
+FeedbackPkt_m.cc
+FeedbackPkt_m.h
+DataPkt_m.cc
+DataPkt_m.h
+lab3-kickstarter
+.obsidian/
+
+# Nix
+.venv
+shell.nix

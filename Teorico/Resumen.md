@@ -13,9 +13,14 @@
       - [Jerarquia de la Internet](#jerarquia-de-la-internet)
   - [La **Nube**](#la-nube)
     - [Clasificacion de las Nubes](#clasificacion-de-las-nubes)
+    - [Estructura de la Nube](#estructura-de-la-nube)
+    - [Nodos](#nodos)
+      - [Balanceadores de Carga](#balanceadores-de-carga)
+    - [Enrutadores](#enrutadores)
   - [La **Internet de las Cosas** (***Internet of Things***) (IoT)](#la-internet-de-las-cosas-internet-of-things-iot)
+      - [Ejemplos de Dispositivos IoT](#ejemplos-de-dispositivos-iot)
     - [Metas de la IoT](#metas-de-la-iot)
-    - [Ejemplos de Dispositivos IoT](#ejemplos-de-dispositivos-iot)
+    - [Estructura de la IoT](#estructura-de-la-iot)
   - [**Redes Blockchain**](#redes-blockchain)
     - [Objetivos de las Redes Blockchain](#objetivos-de-las-redes-blockchain)
     - [Tipos de Dispositivos en una Red Blockchain](#tipos-de-dispositivos-en-una-red-blockchain)
@@ -147,6 +152,43 @@ La **Nube** permite el acceso remoto a un conjunto de **Recursos Informaticos** 
 * **Nube Privada**: Infraestructura dedicada a una sola organizacion, proporcionando mayor control y seguridad.
 * **Nube Hibrida**: Combina nubes publicas y privadas, permitiendo a las organizaciones aprovechar lo mejor de ambos mundos.
 
+### Estructura de la Nube
+
+Una Nube se la puede considerar una red jerarquica compuesta por 4 niveles:
+* **Regiones**: Son ubicaciones geograficas donde los proveedores de servicios en la nube tienen centro de datos. Cada region puede albergar multiples **Zonas de Disponibilidad**.
+* **Zonas de Disponibilidad**: Son **Centros de Datos Aislados** dentro de una region que estan diseñados para operar independientemente. Esto proporciona redundancia y alta disponibilidad, ya que si una zona falla, las aplicaciones pueden seguir funcionando en otra.
+* **Nube Privada Virtual** (***Virtual Private Cloud***) (**VPC**): Una VPC es una red virtual logicamente aislada dentro de una nube publica que permite a los usuarios definir su propio entorno de red. Dentro de una VPC se pueden crear subredes publicas y privadas, lo que permite un control granular sobre el acceso a los recursos. Estas tambien pueden abarcar multiples zonas de disponibilidad para mas disponibilidad y tolerancia a fallos.
+* **Subredes**: Las **subredes** son diviciones dentro de una VPC que permiten organizar y aislar los recursos. Estas subredes pueden ser publicas (con acceso a internet), o privadas (sin acceso directo a internet xd), esto facilita la gestion del trafico y la seguridad.
+
+![](../Teorico/Imagenes/estructuraDeLaNube.png)
+
+### Nodos
+
+Un **Nodo** es una unidad de computacion individual. Existen varios tipos de nodos en la nube:
+* **Servidores Web**: Manejan las solicitudes HTTP/HTTPS y sirven contenido web.
+* **Servidores de Aplicaciones**: Procesan la logica de la aplicacion y acceden a la base de datos.
+* **Servidores de Bases de Datos**: Manejan las bases de datos xd.
+* **Almacenamiento de Objetos**: Utilizado para almacenar archivos estaticos (imagenes, videos, etc.).
+* **Balanceadores de Carga**: Distribuyen el trafico entre multiples servidores para optimizar el uso de los recursos y mejorar la disponibilidad. Esto es esencial para manejar picos de traficos y garantizar tiempos de respuesta rapidos.
+
+#### Balanceadores de Carga
+
+Los balanceadores se pueden clasificar en dos tipos:
+* **Balanceador de Carga Externo**: Se usa para distribuir trafico de clientes externos hacia los servidores web.
+* **Balanceador de Carga Interno**: Se usa para distribuir el trafico entre servidores internos, como entre servidores web y servidores de aplicaciones o bases de datos, sin exponer estos recursos al publico. Solo esta accedible desde una VPC.
+
+![](../Teorico/Imagenes/tiposDeNodosEnLaNube.png)
+
+### Enrutadores
+
+Dentro de la nube existen varios tipos de enrutadores:
+
+* **Enrutador de la VPC**: Se encarga de la comunicacion entre las subredes dentro de la misma VPC y de dirigir el trafico hacia y desde el internet (a traves de puerta de enlace de internet) o hacia otras VPCs (a traves de puerta enlace de VPCs). Los servidores en diferentes subredes dentro de la misma VPC se comunican a traves de enrutadores de la VPC.
+* **Puerta de Enlace de Internet**: Se conectan a la internet y permite que los servidores en las subredes publicas envien y reciban trafico de internet.
+* **Puerta de Enlace de VPCs**: Se usan para comunicar diferentes VPCs entre si.
+
+![](../Teorico/Imagenes/tiposDeEnrutadoresEnLaNube.png)
+
 ## La **Internet de las Cosas** (***Internet of Things***) (IoT)
 
 La **Internet de las Cosas** (**IoT**) es un sistema interconectado que permite que dispositivos fisicos, conocidos como **Dispositivos IoT** se conecten a internet y compartan datos entre si y con sistemas en la nube. Estos dispositivos IoT se conectan a internet a traves de diferentes tegnologias como WiFi, Bluetooth, redes de celulares, etc., para enviar y recibir datos. Estos datos recopilados pueden enviarse a plataformas en la nube donde se almacenaran, procesaran y analizaran.
@@ -155,6 +197,14 @@ La **Internet de las Cosas** (**IoT**) es un sistema interconectado que permite 
 El **Proposito de la IoT** es crear una red de objetos conectados que recopilen, compartan y actuen con informacion para mejorar la vida cotidiana y la eficiencia en diferentes contextos.
 <br> Los dispositivos recopilan datos del entorno, los comparten con otros dispositivos o sistemas, y actuan en base a esa informacion.
 <br>La IoT busca simplificar tareas cotidianas, reduciendo el esfuerzo humano, y hacer que la tegnologia sea mas accesible. Ademas la IoT benefia a los hogares, las industriasm ciudades, la salud, la logistica, etc..
+
+#### Ejemplos de Dispositivos IoT
+
+* **Sensores**: Miden variables fisicas o quimicas.
+* **Actuadores**: Ejecutan acciones fisicas basadas en señales electricas.
+* **Wearables**: Dispositivos portatiles que monitorean la salud y actividad fisica.
+* **Electrodomesticos Inteligentes**.
+* **Camaras de Seguridad Interconectadas**.
 
 ### Metas de la IoT
 
@@ -165,13 +215,9 @@ El **Proposito de la IoT** es crear una red de objetos conectados que recopilen,
 * **Sostenibilidad Ambiental**: Reducir emisiones, reducir ruido.
 * **Analisis de Datos**.
 
-### Ejemplos de Dispositivos IoT
+### Estructura de la IoT
 
-* **Sensores**: Miden variables fisicas o quimicas.
-* **Actuadores**: Ejecutan acciones fisicas basadas en señales electricas.
-* **Wearables**: Dispositivos portatiles que monitorean la salud y actividad fisica.
-* **Electrodomesticos Inteligentes**.
-* **Camaras de Seguridad Interconectadas**.
+
 
 ## **Redes Blockchain**
 
@@ -270,7 +316,3 @@ Existen dos tipos de LANs:
 ### Perdida de Mensajes
 
 Una de las causas de porque cuando se envian mensajes en una red de difusion y se pierden es la **Colision**, mas de una maquina manda simulteaneamente un mensaje, los mensajes colisionan y se dañan.
-<br> Aca pondria lo que hay que hacer en caso de tener colisiones SI TAN SOLO DURAN NO FUERA UN VIEJO GAGA.
-
-![](../Teorico/Imagenes/meme.webp)
-

@@ -21,6 +21,13 @@
       - [Ejemplos de Dispositivos IoT](#ejemplos-de-dispositivos-iot)
     - [Metas de la IoT](#metas-de-la-iot)
     - [Estructura de la IoT](#estructura-de-la-iot)
+      - [Por Tipo de Conectividad](#por-tipo-de-conectividad)
+      - [Por Proposito o Aplicacion](#por-proposito-o-aplicacion)
+      - [Por Consumo Energico](#por-consumo-energico)
+    - [Redes IoT de Sensores](#redes-iot-de-sensores)
+      - [Tipos de Dispositivos](#tipos-de-dispositivos)
+      - [Conectores Entre Dispositivos](#conectores-entre-dispositivos)
+      - [Sistemas CPS (*Cyber-Physical Systems*)](#sistemas-cps-cyber-physical-systems)
   - [**Redes Blockchain**](#redes-blockchain)
     - [Objetivos de las Redes Blockchain](#objetivos-de-las-redes-blockchain)
     - [Tipos de Dispositivos en una Red Blockchain](#tipos-de-dispositivos-en-una-red-blockchain)
@@ -217,7 +224,78 @@ El **Proposito de la IoT** es crear una red de objetos conectados que recopilen,
 
 ### Estructura de la IoT
 
+Las redes IoT se pueden clasificar por diferentes criterios:
 
+#### Por Tipo de Conectividad
+
+* **Redes de Celulares**: Se usan tegnologias (4G o 5G) para proporcionar alta velocidad y cobertura amplia. Son ideales para aplicaciones que requieren gran ancho de banda y baja latencia.
+* **Redes de Medio Alcance** (WiFi)
+* **Redes de Corto Alcance**: Incluyen tegnologias (Bluetooth o Zigbee) que son adecuadas para entornos pequeños como hogares y oficinas. Tienen un alcance limitado, pero son eficientes en consumo energico.
+* **Redes de Area Amplica de Baja Potencia** (***Low Power Wide Area Network***) (**LPWAN**): Estas redes estan diseñadas para dispositivos que requieren largas distancias de comunicacion con bajo consumo energico. Ejemplos de LPWAN son recopilaciones de datos de mediadores de energia, agua y gas; monitoreo agricola a partir de sensores; seguimiento de vehiculos en el trasnporte; etc.
+
+#### Por Proposito o Aplicacion
+
+* **Redes de Salud**: Se usan en aplicaciones de telemedicina y monitoreo de pacientes, permitiendo la recopilacion y transmision de datos medicos en tiempo real. Suelen usar dispositivos Wearables que envian datos a profesionales medicos.
+* **Redes Industriales**: Diseñadas para el monitoreo y control de maquinaria en fabricas. Usan redes celulares o Ethernet industrial.
+* **Redes de Agricultura Inteligente**: Usadas para la monitorizacion de cultivos y ganado, aprovechando la tegnologia LPWAN. Suelen usar sensores para recopilar datos.
+* **Redes de Hogar Inteligente**: Integran Dispositivos Domesticos conectados. Usan Zigbee o Zwave.
+* **Redes para Ciudades Inteligentes**: Usadas para gestionar servicios urbanos (como el trafico, la iluminacion publica, la gestion de residuos, etc.). Suelen usar sensores para la recoleecion de datos. Pueden incluir redes de celulares o LPWAN.
+* **Redes de Transporte y Logistica**: Se usan para optimizar el transporte y la gestion de la cadena de suministro (como el seguimiento de vehiculos y flotas, monitoreo de condiciones de carga, sistema de gestion de almacenes, etc.).
+* **Redes IoT de Retail**: Se usan para mejorar la experiencia del cliente y la eficiencia operativa en el comercio minorista (como beacons para marketing de proximidad, sistemas de inventario inteligentes, analisis de comportamiento de clientes, etc.).
+
+#### Por Consumo Energico
+
+* **Bajo Consumo**: Redes que priorizan la eficiencia energica, como:
+  * **Zigbee**: Usadas en atomatizacion del hogar.
+  * **LoRaWAN**: Usadas en agricultura y ciudades inteligentes; son ideales para dispositivos que funcionan como baterias durante largos periodos.
+  * **Bluetooth**: Usado en wearables y dispositivos medicos portatiles.
+  * **Sigfox**: Para transmitir pequeñas cantidades de datos con cobertura extensa (usadas para rastreo de vehiculos y sistemas de alerta de desastres naturales, etc.).
+* **Muy Bajo Consumo**: Como **RFID** (*Radio Frequency Identification*) que se usa para rastrear ubicacion y movimiento de productos en tiendas; para permitir acceso a areas restringidas en edificios de oficinas, para rastreo de ganado. Y el **NFC** (*Near Field Communication*) para pagos moviles, compartir informacion entre celulares, llaves electronicos, usados en productos o tarjetas personales para proporcionar informacion.
+* **Alto Consumo**: Redes que pueden soportar dispositivos con mayor demanda energica, Suelen usar WiFi o redes de celulares (camaras de seguridad [Conectadas por WiFi], Sistemas de monitoreo y control de maquinaria pesadas o procesos de fabricacion avanzados, automoviles conectados y autonomos, etc.)
+
+### Redes IoT de Sensores
+
+Las redes clasificadas segun su proposito y aplicacion pueden ser **Redes de Sensores** o **Sitemas Ciberfisicos** (***Cyber Physical Systems***) (**CPS**).
+<br> Una **Red IoT de Sensores** generalmente incluyen diversos dispositivos de monitoreo y comunicacion diseñados para recopilar, procesar y transmitir datos. Estas redes suelen incluir diferentes tipos de dispositivos.
+
+#### Tipos de Dispositivos
+* **Sensores**: Son dispositivos que recopilan datos especificos (temperatura, humedad, presion, etc.).
+* **Gateways IoT**: Son dispositivos que actuan como intermediarios entre los sensores y la nube, recopilando y transmitidos datos.
+* **Servidores en la Nube**: Almacenamiento y procesamiento de datos, analisis y ejecucion de algoritmos.
+* **Dispositivos de Usuario**: Celulares, tablets o computadoras usadas para monitorear y controlar la red de sensores.
+
+#### Conectores Entre Dispositivos
+* **Sensores a GateWays IoT**: Usualmente conectados mediante redes inalambricas de corto o medio alcance (Zigbee, Bluetooth, WiFi) o redes de baja potencia y largo alcance (LoRaWAN, NB-IoT).
+* **Gateways IoT a Servidores en la Nube**: Conectados a traves de internet usando TCP/IP, generalmente mediante WiFi, Ethernet o redes de celulares.
+* **Servidores en la Nube a Dispositivos de Usuario**: Conexion a traves de internet usando TCP/IP, permitiendo el acceso remoto a los datos desde cualquier lugar.
+
+![](../Teorico/Imagenes/redesIoTDeSensores.png)
+
+#### Sistemas CPS (*Cyber-Physical Systems*)
+
+Los **Sistemas CPS** son sistemas que integran componentes fisicos y computacionales, estos sistemas estan diseñados para interactuar con el mundo fisico a traves de sensores y actuadores y estan controlados por algoritmos.
+<br> Las caracterisitcas mas importantes es la capacidad para interactuar y controlar procesos fisicos, tienen alta fiabilidad y seguridad, y tienen procesamiento distruibuido y en tiempo real.
+
+Algunos dispositivos que se involucran en un CPS son:
+* **Sensores**: Recompilan datos del entorno.
+* **Actuadores**: Dispositivos que realizan acciones basadas en los datos.
+* **Controladores**: Dispositivos que procesan los datos de los sensores y envian comandos a los actuadores. El controlador actua como el cerebro del sistema. Los controladores tienen diferentes tipos de funciones:
+  * **Recopilacion y Procesamiento de Datos** (proveniente de sensores).
+  * **Control y Ejecucion de Acciones**: El controlador envia comandos a los actuadores para realizar acciones especificas.
+  * **Monitoreo y Supervision**: Mantiene un monitoreo constante del estado de los dispositivos conectados.
+  * **Comunicacion y coordinacion**: Facilita la comunicacion entre diferentes dipositivos y sistemas en la red, actuando como intermediario para la transmision de datos.
+  * **Gestion de Alarmas y Eventos**: Detecta condiciones anomalas o situaciones de fallo y genera alarmas para notificar al personal de mantenimiento para el diagnostico y analisis posterior.
+  * **Retroalimentacion**: Transmite datos recopilados y procesados a los servidores en la nube para analisis adicional y almacenamiento. Puede sincronizar datos con otros sistemas de control y monitoreo remoto.
+* **Servidores en la Nube**: Almacena y procesa los datos.
+* **Dispositivos de Usuario**: Se usan para monitorea y controlar el sistema.
+
+Para conectar los diferentes dispositivos entre si, se necesita diferentes tipos de conexiones:
+* **Sensores a Controladores**: Conexion por cable o inalambrica (Zigbee, WiFi).
+* **Controladores a Actuadores**: Conexion por calbe o inalambrica.
+* **Controladores a Servidores en la Nube**: Conexion por Ethernet o redes de celulares.
+* La Conexion entre servidores en la nube y los dispositivos de usuario generalmente se realiza a traves de internet.
+
+![](../Teorico/Imagenes/sistemasCPS.png)
 
 ## **Redes Blockchain**
 

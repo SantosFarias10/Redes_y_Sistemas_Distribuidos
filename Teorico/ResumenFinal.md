@@ -408,3 +408,31 @@ Una red blockchain permite la validacion del registro de transacciones, usando m
 
 En la red blockchain hay nodos de distitntos tipos que cumplen con un conjunto de roles cada uno. Una red blockchain particular solo va a tener un susbconjunto de los tipos de nodos que existen y no todos.
 
+* **Nodos Completos**: Mantienen una copia del libro mayor y son esenciales para la estabilidad y seguridad de la red, ya que validan todas las transacciones.
+* **Nodos Ligeros**: No almacenan toda la blockchain, sino solo partes necesarias para verificar transacciones. Son ideales para dispositivos con recursos limitados.
+* **Creadores de Bloques**: Participan en el proceso de mineria; resolviendo problemas matematicos para añadir nuevos bloques a la red y recibir recompensas en criptomonedas.
+* **Nodos de Usuario**: Representan los usuarios finales de la red participando en transacciones y validaciones segun sus permisos y roles.
+* **Nodos Validadores**: Verifican y validan transacciones y bloques.
+* **Billeteras**: Son nodos que almacenan claves privadad y publicas necesarias para realizar transacciones en la red. Permiten a los usuarios enviar y recibir criptosmonedas.
+* **Autoridades de Certificacion**: Nodos que emiten y gestionan certificados digitales, asegurando la autenticidad y seguridad de las comunicaciones y transacciones.
+* **Nodos que Ejecutan Contratos Inteligentes**: Ejecutan el codigo de los contratos permitiendo la automatizacion de acuerdos y transacciones sin intervencion humana.
+* **Gateways**: Actuan como puertas de entrada entre la blockchain y otros sistemas, facilitando la tranferencia de datos y transacciones.
+* **Masternodes**: Ejecutan las transacciones anonimas y gestionan la red.
+* **Super Nodos**: Son nodos con mayor capacidad y recursos que ayudan a mejorar la eficiencia y velocidad de la red. Pueden comunicarse a muchos otros nodos y facilitar la distribucion de datos.
+* **Nodos Balanceadores de Carga**: Distribuyen la carga de trabajo entre diferentes nodos para mejorar la eficiencia y rendimiento de la red.
+
+#### ¿Como manejamos mas de una red blockchain?
+
+Existen distintos enfoques para manejar mas de una red blockchain, por ejemplo **Cosmos** y **Polkadot**
+<br>Cosmos (La **Internet de Blockchains**) es una plataforma diseñada para interconectar blockchains de manera eficiente y segura, para esto se usa el protocolo de **Comunicacion Interblockchain** (**IBC**) (***Inter-Blockchain Communication***), esto permite crear aplicaciones descentralizadas que pueden interactuar con varias blockchains. Cada blockchain en Cosmos es independiente y diferente; se denomica como **Zonas**, para conectar varias zonas se usan nodos centrales (hub).
+
+#### Integracion con datos externos
+
+Si se necesita integrar datos externos con una blockchain se usa **ChainLink** que conecta datos externos con contratos inteligentes en diversas blockchains. Usa **Oraculos** que son nodos que recopilan datos de fuentes externas y los envian a la blockchain.
+
+#### Tipos de Oraculos en ChainLink
+
+* **Oraculo de Datos**: Recopilan datos en fuentes externas.
+* **Oraculo de Computacion**: Realizan calculos complejos que no pueden ser procesados directamente por los contratos inteligentes en la blockchain.
+* **Oraculo de Eventos**: Proporcionan informacion sobre eventos especificos que ocurren fuera de la blockchain.
+* **Oraculo de Procesamiento de Pagos**: Facilita la tranferencia de valor entre diferentes sistemas, permitiendo pagos entre contratos inteligentes y sistemas externos.

@@ -60,92 +60,6 @@ Para comunicar a personas con diferentes tipos de redes, usamos las **Interredes
 
 ---
 
-## Redes de Area Amplia (WANs) (*Wide Area Networks*)
-
-Una **Red de Area Amplia (WAN)** es una red que cubre un area geografica grande, tipicamente un pais o hasta un contiente.
-<br>Las WANs estan organizadas de la siguiente manera:
-* **Subred**: Varios enrutadores conectados entre si que forman un grafo, con un arco se representa un cable que une a 2 enrutadores.
-
-![](../Teorico/Imagenes/organizacionWANs.png)
-
-#### ¿Como se hace para enviar mensajes en una WAN?
-
-Con el **Algoritmo de Almacenamiento y Reenvio**, un paquete sigue una ruta de enrutadores, el paquete se almacena enteramente en cada enrutador de la ruta. El paquete almacenado en un enrutador espera alli hasta que la linea requerida de salida este libre y luego se reenvia al siguiente enrutador.
-
-![](../Teorico/Imagenes/algoritmoDeAlmacenamientoYReenvio.png)
-* **Tasa de Transmision**
-
-#### Encolado y Perdidas de Paquetes
-
-Si la tasa de llegada al enlace (en bits) escede a la tasa de transmision del enlace por un periodo de tiempo, los paquetes se van a encolar y esperaran a ser transmitidos en el enlace. Los paquetes puede ser descartados (perdidos) si la memoria (el *buffer*) se llena.
-
-![](../Teorico/Imagenes/encolado.png)
-
-#### Algoritmo de Enrutamiento
-
-En general hay varios caminos que conectan dos enrutadores, el **Algoritmo de Enrutamiento** decide cual de ellos se va a usar.
-
-#### ¿Cuanto demora el almacenamiento y reenvio?
-
-![](../Teorico/Imagenes/demoraAlmacenamientoYReenvio.png)
-
-#### Sistema Telefonico Fijo
-
-Cada domicilio esta conectado por un cable de cobre a un **End Office** (Oficina Central). Toda oficina central esta conectada a un **Toll Office**, estas son usadas para reenvio de mensajes y estan unidas por cables de fibra obtica.
-
-![](../Teorico/Imagenes/sistemaTelefonico.png)
-
----
-
-## Redes de Area Metropolitana (MANs) (*Metropolitan Area Networks*)
-
-Una Red de Area Metropolitana (MAN) es una red que cubre a una ciudad, existen dos tipos de MANs:
-
-#### Redes de Cable 
-
-* Se basan en la red de TV por cable.
-* Para unir varias casas se usa un **Cable Coaxial**.
-
-![](../Teorico/Imagenes/redesDeCable.png)
-
-#### Redes Inalambricas (MAN WiMAX)
-
-* Son redes inalambricas de alta velocidad.
-* Hay una estacion base que permite enviar paquetes por el aire en lugar de usar cables.
-* La estacion base se conecta a internet.
-* Se puede acceder a la red WiMAX desde computadoras en casas o edificios.
-
-![](../Teorico/Imagenes/redesInalambricas.png)
-
----
-
-## Redes de Area Local (LANs) (*Local Area Networks*)
-
-Una Red de Area Local (LAN) es una red operada previamente dentro de un edificio o casa, tambien puede operar en un campus de varios edificios.
-
-#### ¿Donde puede usarse una LAN?
-
-Una LAN puede usarse en un hogar o en una organizacion (publica o privada). Las LAN usadas por compañias se les llama **Redes Empresariales**.
-
-#### ¿Que tipos de Host se comunican a una LAN?
-
-Las LAN se usan para comunicar PCs, notebooks, celualres, etc.. La idea es que los *hosts* puedan compartir recursos e intercambiar informacion.
-
-#### Tipos de LAN
-
-* **LAN Inalambricas**: Las maquinas se comunican entre si (si uso de calbes) por medio de una estacion base (*acceso point*).
-* **Ethernet**: Las maquinas se conectan por medio de cables a un commutador (*switch*).
-
-#### Difusion de Mensajes
-
-Si enviamos un mensaje a todas las maquinas esto se lo llama ***Broadcasting***. Si lo enviamos a un grupo de maquinas en particular se lo llama ***Multicasting***.
-
-#### Colision
-
-Se envia un mensaje en una red de difusion, pero esto se pierde ¿Porque pasa esto? por las **Colisiones**: Mas de una maquina manda simultaneamente un mensaje, los mensajes colisionan y se dañan.
-
----
-
 ## Internet
 
 La **Internet** es una red de redes que interconectan varias redes entre si, esta formada por billones de dispositivos de computacion conectados entre si. En la internet se ejecutan las **Aplicaciones de Red**. Para el envio y la recepcion de mensajes entre sistemas finales se usan **Protocolos**.
@@ -224,6 +138,86 @@ Si pensamos a la internet como una red formada por niveles que forman una jerarq
 * **Redes Proovedoras de Contenido**.
 * En el medio ISP regionales.
 * Y al ultimo las ISPs de Acceso.
+
+### Redes de Area Amplia (WANs) (*Wide Area Networks*)
+
+Una **Red de Area Amplia (WAN)** es una red que cubre un area geografica grande, tipicamente un pais o hasta un contiente.
+<br>Las WANs estan organizadas de la siguiente manera:
+* **Subred**: Varios enrutadores conectados entre si que forman un grafo, con un arco se representa un cable que une a 2 enrutadores.
+
+![](../Teorico/Imagenes/organizacionWANs.png)
+
+#### ¿Como se hace para enviar mensajes en una WAN?
+
+Con el **Algoritmo de Almacenamiento y Reenvio**, un paquete sigue una ruta de enrutadores, el paquete se almacena enteramente en cada enrutador de la ruta. El paquete almacenado en un enrutador espera alli hasta que la linea requerida de salida este libre y luego se reenvia al siguiente enrutador.
+
+![](../Teorico/Imagenes/algoritmoDeAlmacenamientoYReenvio.png)
+* **Tasa de Transmision**
+
+#### Encolado y Perdidas de Paquetes
+
+Si la tasa de llegada al enlace (en bits) escede a la tasa de transmision del enlace por un periodo de tiempo, los paquetes se van a encolar y esperaran a ser transmitidos en el enlace. Los paquetes puede ser descartados (perdidos) si la memoria (el *buffer*) se llena.
+
+![](../Teorico/Imagenes/encolado.png)
+
+#### Algoritmo de Enrutamiento
+
+En general hay varios caminos que conectan dos enrutadores, el **Algoritmo de Enrutamiento** decide cual de ellos se va a usar.
+
+#### ¿Cuanto demora el almacenamiento y reenvio?
+
+![](../Teorico/Imagenes/demoraAlmacenamientoYReenvio.png)
+
+#### Sistema Telefonico Fijo
+
+Cada domicilio esta conectado por un cable de cobre a un **End Office** (Oficina Central). Toda oficina central esta conectada a un **Toll Office**, estas son usadas para reenvio de mensajes y estan unidas por cables de fibra obtica.
+
+![](../Teorico/Imagenes/sistemaTelefonico.png)
+
+### Redes de Area Metropolitana (MANs) (*Metropolitan Area Networks*)
+
+Una Red de Area Metropolitana (MAN) es una red que cubre a una ciudad, existen dos tipos de MANs:
+
+#### Redes de Cable 
+
+* Se basan en la red de TV por cable.
+* Para unir varias casas se usa un **Cable Coaxial**.
+
+![](../Teorico/Imagenes/redesDeCable.png)
+
+#### Redes Inalambricas (MAN WiMAX)
+
+* Son redes inalambricas de alta velocidad.
+* Hay una estacion base que permite enviar paquetes por el aire en lugar de usar cables.
+* La estacion base se conecta a internet.
+* Se puede acceder a la red WiMAX desde computadoras en casas o edificios.
+
+![](../Teorico/Imagenes/redesInalambricas.png)
+
+### Redes de Area Local (LANs) (*Local Area Networks*)
+
+Una Red de Area Local (LAN) es una red operada previamente dentro de un edificio o casa, tambien puede operar en un campus de varios edificios.
+
+#### ¿Donde puede usarse una LAN?
+
+Una LAN puede usarse en un hogar o en una organizacion (publica o privada). Las LAN usadas por compañias se les llama **Redes Empresariales**.
+
+#### ¿Que tipos de Host se comunican a una LAN?
+
+Las LAN se usan para comunicar PCs, notebooks, celualres, etc.. La idea es que los *hosts* puedan compartir recursos e intercambiar informacion.
+
+#### Tipos de LAN
+
+* **LAN Inalambricas**: Las maquinas se comunican entre si (si uso de calbes) por medio de una estacion base (*acceso point*).
+* **Ethernet**: Las maquinas se conectan por medio de cables a un commutador (*switch*).
+
+#### Difusion de Mensajes
+
+Si enviamos un mensaje a todas las maquinas esto se lo llama ***Broadcasting***. Si lo enviamos a un grupo de maquinas en particular se lo llama ***Multicasting***.
+
+#### Colision
+
+Se envia un mensaje en una red de difusion, pero esto se pierde ¿Porque pasa esto? por las **Colisiones**: Mas de una maquina manda simultaneamente un mensaje, los mensajes colisionan y se dañan.
 
 ---
 

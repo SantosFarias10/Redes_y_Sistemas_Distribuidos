@@ -74,7 +74,38 @@ Debajo de la capa 1 esta el **Medio Fisico**
   * Agrega un encabezado y un terminador, a cada pieza, pasa la unidad resultante a la capa 1 para su transmision.
 * Capa 1: **Capa Fisica**
 
-#### ¿Como identificamos a las maquinas de una red?
+#### Control de flujo
+
+Algunas veces los mensajes pueden llegar al receptor y luego perderse, esto sucede porque un emisor rapido satura al receptor hasta que este ya no puede almacenar mas datos que le llegan y comienzan a perder datos
+<br>¿Como evitamos que el emisor rapido sature al receptor? Usamos la **Retroalimentacion al Emisor**, o sea, le indicamos cuando puede enviar datos.
+
+#### Fragmentacion de Mensajes
+
+Es comun que las capas impongan un tamaño maximo a los mensajes. En los encabezados de los protocolos suele haber campos de mensajes, estos campos suelen tener una longitud fija, lo que implica un tamaño maximo de los mensajes.
+<br>Si los mensajes que llegan no cumplen con el protocolo de una capa por ser demasiados grandes, una solucion es fragmentar los mensajes, trasmitir estos fragmentos y reensamblar los mensajes. En la interred hay 2 tipos de fragmentacion:
+
+![](../Teorico/Imagenes/fragmentacionDeMensajes.png)
+
+#### Congestion
+
+A veces en la red hay que enviar demasiados mensajes por la misma linea de salida de un enrutador y esta se pone mas lenta o no puede enviar a todos estos mensajes, a esto se le llama **Congestion**. La Congestion ocurre cuando la red no puede manejar la carga de paquetes que recibe de manera aceptable (esperas inaceptables o perdidas de paquetes).
+<br>¿Como controlamos la congestion?  Las computadoras emisoras se enteran de la congestion y reduce el trafico de salida.
+
+#### Modelos de referencia de redes de computadoras
+
+![](../Teorico/Imagenes/modeloHibrido.png)
+
+Usaremos le modelo hibrido de las capas fisica, de enlace de datos, de red, de transporte y de aplicacion. Nos centraeremos en el modelo TCP/IP para las capas 3, 4 y 5. El orden a seguir es de arriba hacia abajo (*top-down*), o sea capa de aplicacion -> capa de transporte -> capa de red -> capa de enlace de datos -> capa fisica.
+
+![](../Teorico/Imagenes/modeloHibridoFuncion.png)
+
+#### Modelo de referencia TCP/IP
+
+![](../Teorico/Imagenes/ModeloDeReferenciaTCP-IP.png)
+
+### Capa de Aplicacion
+
+
 
 ### Aplicaciones de Red
 

@@ -45,6 +45,37 @@ Todos estos tipos de redes, mientras mas chica es la distancia se trabaja con la
 
 ![](../Teorico/Imagenes/sistemasOperativosDeRed.png)
 
+#### ¿Como esta organizado el SO de red?
+
+Los **Sistemas Operativos de Redes** (SOR) estan organizadas como una **Pila de Capas** o **Niveles**, cada una construida arriba de la que esta debajo de ella. Las Pilas de Capas se usan para reducir la complejidad del diseño de los SO.
+<br>Distintos tipos redes tendran distinta cantidad de capas, nombres, contenido y funcion.
+
+#### Jerarquia de Protocolos
+
+El proposito de una Capa en una arquitectura multicapa (Una Arquitectura de red es un conjunto de capas y protocolos) es ofrecer ciertos servicios a las capas superiores y ocultar la implementacion a las capas superiores
+<br>Una **Interfaz Entre Capas** son las operaciones y servicios primitivos ofrecidos por una capa a capa superior.
+
+El SO se preocupa de la comunicacion de informacion, esto afecto al proposito de las capas, ya que cada capa `n` se piensa como una conversacion entre la capa `n` de una maquina con la capa `n` de otra maquina. Para especificar como es esta conversacion se usan los **Protocolos**.
+<br> Un **Protocolo de Capa `n`** son las reglas y convenciones usadas en la conversacion entre la capa `n` de una maquina y la capa `n` de otra maquina.
+
+Durante el **Envio de Mensajes** cada capa pasa los datos y la informacion de control a la copa inmediatamente inferior, hasta que se alcanza la capa mas baja.
+<br>Durante la **Recepcion de Mensajes** cada capa pasa cierta informacion conteniendo los datos a la capa inmediatamente superior hasta que alcanza la capa mas alta.
+
+Debajo de la capa 1 esta el **Medio Fisico**
+
+![](../Teorico/Imagenes/jerarquiaDeProtocolos.png)
+* Capa 5: **Capa de Aplicacion**
+  * Produce un mensaje y lo pasa a la capa 4 para su transmision.
+* Capa 4: **Capa de Transporte**
+  * Pone un encabezado en el mensaje para identificarlo y lo pasa a la capa 3, el encabezado contiene numeros de secuencia para que la capa 4 en la maquina de destino entregue los mensajes en el orden correcto.
+* Capa 3: **Capa de Red**
+  * Divide en **Paquetes** los mensajes que llegan, a cada paquete se lo coloca en el encabezado. Esta capa decide cual de las lineas que salen usar (cuando la maquina es un enrutador). Finalmente pasa los paquetes a la capa 2.
+* Capa 2: **Capa de Enlace de Datos**
+  * Agrega un encabezado y un terminador, a cada pieza, pasa la unidad resultante a la capa 1 para su transmision.
+* Capa 1: **Capa Fisica**
+
+#### ¿Como identificamos a las maquinas de una red?
+
 ### Aplicaciones de Red
 
 ![](../Teorico/Imagenes/aplicacionesDeRed.png)

@@ -173,6 +173,10 @@ El proposito de esta capa es tranportar una corriente de datos de una maquina a 
     * Area Amplia.
     * Satelite.
 
+### Capas en distintos tipos de maquinas
+
+![](../Teorico/Imagenes/capasEnDistintosTiposDeMaquinas.png)
+
 ### Aplicaciones de Red
 
 ![](../Teorico/Imagenes/aplicacionesDeRed.png)

@@ -105,7 +105,73 @@ Usaremos le modelo hibrido de las capas fisica, de enlace de datos, de red, de t
 
 ### Capa de Aplicacion
 
+En la capa de aplicacion tenemos las **Aplicaciones de Red**, cada aplicacion ofrece un servicio especifico con su propia forma de interfaz con el usuario.
 
+#### Desarrollo de aplicaciones de red
+
+Hay dos opciones para desarrollar aplicaciones de red:
+1. El programador para especificar la comunicacion usa una interfaz para programas de aplicacion (API). La API es un conjunto de funciones a ser usadas. La **Socket API** es el estandar de facto para el software que se comunica sobre la internet.
+2. El programador se apoya en **Middlewares** para construir la aplicacion de red. Un middleware provee servicios al software de la aplicacion, le facilita a los desarrolladores implementar la comunicacion y la entrada/salida de modo que se pueden enfocar en el proposito especifico de la aplicacion.
+
+#### TCP/IP
+
+La capa de aplicacion en TCP/IP contiene varios protocolos de nivel mas alto: Tranferencia de archivos (FTP), correo electronico (SMTP), para resolucion de nombres de host en sus direcciones de red (DNS), para la web (HTTP), etc.
+<br>En la capa de aplicacion de internet es muy importante la web y los protocolos que lo soportan (HTTP, HTTPS y DNS).
+
+### Capa de Transporte
+
+La capa de red provee comunicacion entre hosts, los paquetes de la comunicacion entre los hosts siguen rutas elegidas por la capa de red. En la practica la comunicacion ocurre entre procesos, esta capa mejora los servicios de la capa de red. Esta capa se ejecuta por completo en los hosts.
+<br>Las **Entidades de Transporte** son el software/hardware de la capa de transporte.
+
+#### Problemas que resuelve la capa de transporte
+
+* El uso de temporizadores y la retransmision de paquetes.
+* El uso de buferes y control de flujo.
+* Evita la congestion de la red.
+
+#### Capa de transporte: TCP/IP
+
+La capa de transporte de internet tiene 2 protocolos
+1. **TCP**: Divide el flujo de bytes entrantes en mensajes discretos y para cada uno de ellos a la capa de internet. Proporciona entrega confiable y en orden de los mensajes. Reensambla los mensajes recibidos en el receptor. TCP tambien maneja el control de flujo y el control de congestion.
+2. **UDP**: Proporciona la entrega de mensajes de forma no confiable y desordenada, esto quiere decir que un mensaje puede entregarse con errores, o no entregarse, o bien varios mensajes pueden entregarse de forma desordenada.
+
+### Capa de Red
+
+Los objetivos de esta capa es resolver problemas que surgen cuando un mensaje tiene que viajar por redes de distinta tecnologia para llegar a destino. Tambien se encarga de la demora de llegada de los paquetes (esto sucede porque algunas redes tienen multiples rutas entre el origen y el destino, por lo que el paquete puede llegar a tomar la ruta mas lenta/larga), de esto se encarga el algoritmo de enrutamiento.
+
+#### La capa de red: TCP/IP
+
+La capa de interred permite que los hosts inyecten paquetes dentro de cualquiera de las redes de la interred. Los paquetes de diferentes hosts se envian de manera independiente, una consecuencia de esto es que los paquetes pueden llegar en orden distinto al que fueron enviados, cuando pasa esto las capas de arriba deben ordenarlos, si se desea una entrega ordenada.
+
+#### IP
+
+Para distinguir entre las diferentes maquinas que tienen una conexion a internet se usan **Direcciones IP**. Existen distintas versiones de IP, por ejemplo:
+* Direcciones IPv4 (de 32 bits), 4 numeros entre 0 y 255 separados por puntos.
+* Direcciones IPv6 (de 128 bits), 8 numeros entre 0 y 255 separados por puntos.
+
+### Capa de Enlace de Datos
+
+El objetivo de esta capa es transformar un medio de transmision puro en una linea de comunicacion que aparezca libre de errores de transmision.
+
+### Capa Fisica
+
+El proposito de esta capa es tranportar una corriente de datos de una maquina a otra usando medios fisicos xd, estos medios pueden ser cables de cobre, fibra optica, celular, etc.. Esta capa no consiste solamente de medios fisicos.
+
+#### Medios Fisicos
+
+* Bit, se propaga entre pares de transmisor/receptor.
+* Enlace Fisico: Es lo que yace entre el transmisor y el receptor.
+* Medios Guiados.
+* Medios No Guiados.
+* Par Trenzado: Son dos cables de cobre aislados.
+* Cable Coaxial: Son dos conductores concentricos de cobre bidireccionales.
+* Cable de Fibra Optica: Fibra de vidrio que transporta pulsos de luz, cada pulso es un bit, operan a alta velocidad y tienen baja tasa de errores.
+* Radio: Señal transportada en el espectro electromagnetico, no se usa un cable fisica, es bidireccional y tiene un efecto de propagacion en el entorno.
+  * Tipos de Enlaces de Radio:
+    * Microondas terrestres.
+    * LAN.
+    * Area Amplia.
+    * Satelite.
 
 ### Aplicaciones de Red
 

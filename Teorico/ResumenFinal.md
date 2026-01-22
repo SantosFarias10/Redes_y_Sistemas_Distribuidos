@@ -519,7 +519,40 @@ La capa de red esta formada por protocolos que facilitan la conectividad y el en
 
 #### Capa de Almacenamiento
 
+Consiste de protocolos usados para acceder y gestionar datos almacenados en la nube. Se usan protocolos diferentes para diferentes tipos de almacenamiento, los tipos de almacenamiento pueden ser:
+* **En Bloque**: Se almacenan datos en bloques individuales (como en bases de datos o sistemas de gestion de contenido).
+* **De Archivo**: Permite acceso a sistemas de archivos (archivos y carpetas).
+* **De Objetos**: Para grandes cantidades de datos no estructurados como archivos multimedia, pdf, copias de seguridad, datos de IoT, archivos de registro, etc..
 
+#### Capa de Plataforma
+
+Es un conjunto de herramientas y servicios que los desarrolladores pueden usar para construir y ejecutar aplicaciones sin tener que preocuparse por los detalles tecnicos de como funcionan los servidores o la infraestructura detras de escena. Esta capa permite que las aplicaciones se conecten y trabajen con servicios en la nube (como bases de datos, almacenamiento o precesamiento) utilizando APIs.
+<br>Esta capa proporciona todo lo necesario para que los desarrolladores puedan escribir el codigo de sus aplicaciones, probarlas para asegurarse de que funcionan correctamente y desplegarlas, o sea ponerlas en funcionamiento para los usuarios.
+<br>Gracias a la capa de plataforma, los desarrolladores no tienen que preocuparse por configurar servidores, gestionar redes o resolver problemas complejos de infraestructura, pueden enfocarse unicamente en crear las funcionalidades de sus aplicaciones.
+
+Los protocolos usados en esta capa son:
+* **REST**: Se usa para que las aplicaciones pidan o envien informacion a los servicios en la nube.
+* **gRPC** (***Google Remote Procedure Call***): Permite a los programas ejecutar funciones o procedimientos en servidores remotos como si estuvieran en la misma maquina local.
+
+#### Capa de Funciones Sin Servidor
+
+Esta capa involucra protocolos que permiten ejecutar codigo en respuesta a eventos sin necesidad de gestionar servidores, ni la infraestructura. Es ideal para aplicaciones rapidas y eficientes.
+
+Los eventos son fundamentales para activar y ejecutar las funciones. Los tipos de eventos mas comunes son:
+* **Evento HTTP**: Cuando el usuario hace solicitud a traves de una API o un browser.
+* **Cambios en la Base de Datos**: Cuando hay modificacione en los datos.
+* **Eventos de Almacenamiento en la Nube**: Cuando se hacen acciones sobre objetos almacenados.
+* **Eventos de Mensajeria**: Sistemas de mensajeria o colas que mandan notificaciones sobre nuevos mensajes o tareas.
+* **Eventos de IoT**: Cuando dipostivios IoT mandan datos o notificaciones.
+* **Eventos a Intervalos Regulares**: Evento de que paso un tiempo `T`.
+* **Eventos de Aplicaciones Externas**: Aplicaciones externas mandan notificaciones sobre eventos relevantes.
+
+#### Capa de Contenedores
+
+Protocolos y tegnologias usadas para la gestion y orquestacion de contenedores en la nube.
+<br>Los **Contenedores** permiten empaquetar las aplicaciones y sus dependencias, lo que facilita su despliegue y escalabilidad.
+
+![](../Teorico/Imagenes/capasDeLaNube.png)
 
 
 ---

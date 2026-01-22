@@ -454,7 +454,7 @@ En la IoT se usa un **Modelo de Capas de Referencia** con las mismas capas que l
 #### Capa Fisica
 
 Se encarga de la transmision de bits a partir de medios fisicos.
-<br>Algunos problemas de esta capa:
+<br>Los problemas que resuelve esta capa son:
 * **El Consumo Energico**: Hay dispositivos IoT que son alimentados por baterias y necesitan ser eficientes en el uso de energia. Se implementan tecnicas como el **Modelo de Sueño**, para que los dipositivos entren en estado inactivo cuando no estan transmitiendo datos.
 * **Interferencias y Ruido**: Las comunicaciones inalambricas pueden ser afectadas por interferencias y ruido. Se usan tecnicas de **Modulacion Adaptativa** para optimizar la transmision segun las condiciones del canal, tambien se ajusta el tipo de modulacion en funcion del nivel de interferencias o ruido.
 * **Conectividad**: Garantizar que los dispositivos pueden mantenerse conectados en entorno dificiles. Se puede implementar una **Malla** de modo que todos los dispositivos se comunican entre si directamente.
@@ -468,7 +468,7 @@ Protocolos de la Capa Fisica:
 
 Esta capa es la responsable de la transmision de datos entre dispositivos dentro de la misma red local.
 
-Los problemas que se presentan en esta capa son:
+Los problemas que se resuelven en esta capa son:
 * **Control de Errores**.
 * **Control de Acceso al Medio**.
 * **Retraso y Variaciones en el Tiempo de Transmision**: Pueden afectar las aplicaciones en tiempo real. La solucion ideal es ajustar el tamaño y la estructura de las tramas para minimizar la latencia.
@@ -484,7 +484,7 @@ Los protocolos de esta capa son:
 #### Capa de Red
 
 Gestiona el direccionamiento y el enrutamiento de los datos entre diferentes redes.
-<br>Los problemas que se presentan en esta capa son:
+<br>Los problemas que se resuelven en esta capa son:
 * **Enrutamiento**: En redes con dispositivos voviles y topologias cambiantes.
 * **Escalabilidad**: Gestion eficiente de un gran numero de dispositivos.
 * **Movilidad en redes inalambricas**: Soporte para dispositivos que se mueven fuera y dentro de la red.
@@ -497,7 +497,7 @@ Los protocolos de esta capa son:
 #### Capa de Transporte
 
 Asegura la transmision de datos confiable y ordenada entre dispositivos.
-<br>Los problemas que se presentan en esta capa son:
+<br>Los problemas que se resuelven en esta capa son:
 * **Fiabilidad de la Transmision**: Asegurar que los datos lleguen de manera confiable, en especial en eredes con alta tasa de perdida de paquetes.
 * **Control de Flujo** y **Control de Congestion**.
 * **Compatibilidad de Protocolos**: Integracion con protocolos especificos de IoT.
@@ -510,7 +510,7 @@ Los protocolos de esta capa son:
 #### Capa de Aplicacion
 
 Define los protocolos de comunicacion usados por las aplicaciones de IoT, esta capa facilita la interaccion entre el usuario y el sistema IoT.
-<br>Los problemas que se presentan en esta capa son:
+<br>Los problemas que se resuelven en esta capa son:
 * **Interoperabilidad**: Asegurar que los dispositivos y aplicaciones de diferentes fabricantes puedan comunicarse entre si.
 * **Seguridad y Privacidad**: Garantizar que los datos sean transmitidos y almacenados de manera segura.
 * **Gestion de Dispositivos**: Administracion eficiente de un gran numero de dispositivos.
@@ -531,7 +531,7 @@ Los protocolos de esta capa son:
 #### Capa de Procesamiento y Almacenamiento
 
 Es responsable de procesar, almacenar y analizar los datos recopilados por los dispositivos IoT.
-<br>Los problemas que se presentan en esta capa son:
+<br>Los problemas que se resuelven en esta capa son:
 * Procesamiento en Tiempo Real: Capacidad para procesar y analizar datos rapidamente.
 * Almacenamiento Masivo: Manejo eficiente del almacenamiento de grandes volumenes de datos.
 
@@ -539,7 +539,7 @@ Es responsable de procesar, almacenar y analizar los datos recopilados por los d
 
 Se encarga de la gestion y orquestacion de recursos en la red IoT. Proporciona herramientas para la configuracion, monitoreo, actualizacion y administracion de dispositivos y aplicaciones IoT.
 <br>Esta capa tiene la funcion de gestionar los dispositivos, seguridad, actualizaciones de firmware, monitorio de rendimiento, etc..
-<br> Esta capa tiene los siguientes problemas:
+<br> Esta capa resuelve los siguientes problemas:
 * **Configuracion y Monitoreo**: Necesidad de configurar y monitorear dispositivos de manera eficiente.
 * **Actualizacion de Firmware**: Capacidad de actualizar el software de los dispositivos de manera remota.
 
@@ -553,8 +553,6 @@ Los protocolos de gestion de dispositivos:
 Muchos dispositivos IoT son de **Baja Potencia** y tienen recursos limitados. Por lo tanto los protocolos para IoT esta diseñados para ser ligeros y eficientes en el uso de energia y recursos. En cambio los dispositivos conectados a internet, generalmente tienen recursos relativamente abundantes en terminos de energia, capacidad de procedimiento y memoria.
 <br>La IoT se enfoca en la comunicacion entre dispositivos IoT heterogeneos en entorno especificos (hogares inteligentes, fabricas automatizadas, ciudades inteligentes, etc.). La internet esta diseñada para la comunicacion entre computadoras y servidores, facilitando el intercambio de informacion a gran escala y el acceso a servicios en linea.
 <br>Se necesitan protocolos para escalar a una gran cantidad de dispositivos IoT, gestionando trasmisiones de datos frecuentes y a menudo en tiempo real. Los protocolos de internet permiten escalar a muchos maquinas y gestionar grandes volumenes de trafico de datos, pero solo para computadoras y servidores, y no para dipositivos IoT.
-
-
 
 ---
 
@@ -734,3 +732,6 @@ Si se necesita integrar datos externos con una blockchain se usa **ChainLink** q
 * **Oraculo de Computacion**: Realizan calculos complejos que no pueden ser procesados directamente por los contratos inteligentes en la blockchain.
 * **Oraculo de Eventos**: Proporcionan informacion sobre eventos especificos que ocurren fuera de la blockchain.
 * **Oraculo de Procesamiento de Pagos**: Facilita la tranferencia de valor entre diferentes sistemas, permitiendo pagos entre contratos inteligentes y sistemas externos.
+
+### Sistema Operativo para Redes Blockchain
+

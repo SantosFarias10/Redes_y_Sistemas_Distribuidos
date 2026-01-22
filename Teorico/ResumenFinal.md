@@ -447,6 +447,115 @@ Los sistemas CPS son sistemas que integran componentes fisicos y computacionales
 * **Gestion de Alarmas y Eventos**: Detecta condiciones anomalas o situaciones de fallo y genera alarmas para notificar al personal de mantenimiento o alos sistemas de supervision.
 * **Retroalimantacion a Gateways y Sistemas en la Nube**: Transmite datos recopilados y procesados a los servidores en la nube para analisis adicional y almacenamiento, sincroniza datos con otros sistemas de control y monitoreo.
 
+### Sistema Operativo para IoT
+
+En la IoT se usa un **Modelo de Capas de Referencia** con las mismas capas que las redes de computadoras, pero se añaden dos capas mas (). Ademas, las capas con el mismo nombre resuelven problemas adicionales tipicos de IoT.
+
+#### Capa Fisica
+
+Se encarga de la transmision de bits a partir de medios fisicos.
+<br>Algunos problemas de esta capa:
+* **El Consumo Energico**: Hay dispositivos IoT que son alimentados por baterias y necesitan ser eficientes en el uso de energia. Se implementan tecnicas como el **Modelo de Sueño**, para que los dipositivos entren en estado inactivo cuando no estan transmitiendo datos.
+* **Interferencias y Ruido**: Las comunicaciones inalambricas pueden ser afectadas por interferencias y ruido. Se usan tecnicas de **Modulacion Adaptativa** para optimizar la transmision segun las condiciones del canal, tambien se ajusta el tipo de modulacion en funcion del nivel de interferencias o ruido.
+* **Conectividad**: Garantizar que los dispositivos pueden mantenerse conectados en entorno dificiles. Se puede implementar una **Malla** de modo que todos los dispositivos se comunican entre si directamente.
+
+Protocolos de la Capa Fisica:
+* **Zigbee**: Diseñado para ser eficiente en el consumo de energia; ideal para dispositivos alimentados por baterias. Usa tegnicas de modulacion y control de acceso al medio para minimizar la interferencia. Proporciona conectividad fiable en entornos de corto alcance.
+* **LoRaWAN**: Permite la comunicacion de largo alcance con un bajo consumo de energia. Diseñado para dispositivos de baja potencia, que pueden permanecer en modos de sueño la mayor parte del tiempo. Permite conectividad en entornos dificiles como en areas rurales y en entornos urbanos densos. Admite una gran cantidad de dispositivos conectados. Los dispositivos solo transmiten cuando tiene datos que enviar.
+* **NB-IoT**: Permite baja potencia y larga duracion de la bateria; proporciona una amplia cobertura, incluso en areas de dificil acceso. Reduce los costos operativos y de implementacion.
+
+#### Capa de Enlace de Datos
+
+Esta capa es la responsable de la transmision de datos entre dispositivos dentro de la misma red local.
+
+Los problemas que se presentan en esta capa son:
+* **Control de Errores**.
+* **Control de Acceso al Medio**.
+* **Retraso y Variaciones en el Tiempo de Transmision**: Pueden afectar las aplicaciones en tiempo real. La solucion ideal es ajustar el tamaño y la estructura de las tramas para minimizar la latencia.
+* **Desconexiones frecuentes**: Los dipositivos IoT al ser moviles o al ubicarse en areas con mala cobertura pueden sufrir desconexiones.
+* **Seguridadd de la Comunicacion**: Los datos transmitidos no deben ser interceptados ni alterados. Se puede aplicar cifrado y autenticacion en la capa de enlace de datos para asegurar la comunicacion.
+
+Los protocolos de esta capa son:
+* Wifi, Ehernet, Bluetooth,
+* Zigbee, LoRaWAN.
+* ***Bluetooth Low Energy*** (**BLE**): Muy eficiente en consumo de energia, ideal para dispositivos que necesitan durar mucho tiempo con baterias pequeñas.
+* **6LoWPAN**: Permite encapsular y enviar paquetes IPv6 sobre redes de baja patencia. Se puede usar en sensores y actuadores. Implementa tecnicas de compresion de encabezado y fragmentacion para permitir que los paquetes IPv6 se transmitan eficientemente en redes WPAN de baja potencia.
+
+#### Capa de Red
+
+Gestiona el direccionamiento y el enrutamiento de los datos entre diferentes redes.
+<br>Los problemas que se presentan en esta capa son:
+* **Enrutamiento**: En redes con dispositivos voviles y topologias cambiantes.
+* **Escalabilidad**: Gestion eficiente de un gran numero de dispositivos.
+* **Movilidad en redes inalambricas**: Soporte para dispositivos que se mueven fuera y dentro de la red.
+
+Los protocolos de esta capa son:
+* **De internet**: IPv4, IPv6.
+* **6LoWPAN**: Permite que lod dispositivvos de baja potencia usen IPv6. Optimizado para dispositivos de baja potencia. Resuelve los problemas de enrutamiento y direccionamiento. Utiliza IEEE 802.15.4 como protocolo de enlace de datos, que es adecuado para comunicaciones de corto alcance y baja potencia.
+* **RPL**: Optimizado para redes de dispositivos con baja potencia y alta tasa de perdida de paquetes. Soporta redes con gran numero de nodos. RPL adapta las rutas de transmision en funcion de las condiciones de la red, optimizando el uso de los recursos y seduciendo el consumo de energia.
+
+#### Capa de Transporte
+
+Asegura la transmision de datos confiable y ordenada entre dispositivos.
+<br>Los problemas que se presentan en esta capa son:
+* **Fiabilidad de la Transmision**: Asegurar que los datos lleguen de manera confiable, en especial en eredes con alta tasa de perdida de paquetes.
+* **Control de Flujo** y **Control de Congestion**.
+* **Compatibilidad de Protocolos**: Integracion con protocolos especificos de IoT.
+
+Los protocolos de esta capa son:
+* **De internet**: TCP, UDP.
+* **MQTT** (***Message Queuing Telemetry Transport***): Optimizado para redes con ancho de banda limitada; diseñado para minimizar el consumo de energia durante la transmision de datos, proporciona varios  niveles de calidad de servicio para garantizar la entrega de mensajes. MQTT usa TCP como base para la transmision de datos. Se centra en la comunicacion de mensajes en tiempo real, comunicacion maquina a maquina.
+* **CoAP** (***Constrained Application Protocol***): Optimizado para dispositivos con recursos limitados, como baja capacidad de procesamiento y memoria. Proporciona confirmaciones de entrega y retransmision de mensajes perdidos. Generalmente se implementa sobre UDP.
+
+#### Capa de Aplicacion
+
+Define los protocolos de comunicacion usados por las aplicaciones de IoT, esta capa facilita la interaccion entre el usuario y el sistema IoT.
+<br>Los problemas que se presentan en esta capa son:
+* **Interoperabilidad**: Asegurar que los dispositivos y aplicaciones de diferentes fabricantes puedan comunicarse entre si.
+* **Seguridad y Privacidad**: Garantizar que los datos sean transmitidos y almacenados de manera segura.
+* **Gestion de Dispositivos**: Administracion eficiente de un gran numero de dispositivos.
+* **Eficiencia Energetica**: para dispositivos con recursos limitados y consumo de energia bajo.
+* **Fiabilidad y Calidad de Servicio**: Entrega de mensajes confiables para aplicaciones criticas.
+* **Escalabilidad y Ancho de Banda**: Poder manejar la demanda cuando el numero de dispositivos IoT aumaneta.
+* **Simplicidad**: simples de implementar en dispositivos con capacidad limitada.
+* **Complejidad**: Suficientemente complejos como para manejar las necesidades de las aplicaciones.
+
+Los protocolos de esta capa son:
+* **De la Web**: HTTP, HTTPS.
+* **MQTT** (***Message Queuing Telemetry Transport***): Facilita la comunicacion de dispositivos y servidores; facilita la comunicacion entre diferentes fabricantes; soporta grandes cantidades de nodos y transmisiones de datos frecuentes. Para esto se usa un Modelo de **Publicacion/Suscripcion** para minimizar el uso de ancho de banda y energia. Se mandan datos solo cuando es necesario en lugar de mantener conexiones constantes. Usa **Topicos** para direccionar los mensajes; un topico representa un canal de comunicacion a traves del cual se publican y suscriben mensajes. Los clientes publican mensajes en topicos y los suscriptores reciben los mensajes de esos topicos. El **Broker** es un servidor que actua como intermediario en la comunicacion entre dispositivos IoT. Es intermediario entre dispositivos que quieren enviar datos (publicadores) y dispositivos que quieren recibir datos (suscriptores). Mantiene comunicaciones con el broker, reduciendo la sobrecarga de establecer nuevas conexiones.
+* **CoAP** (***Constrained Application Protocol***): Proporciona un enfoque ligero para la comunicacion entre dispositivos y servidores. Es ideal para dispositivos co baterias. Ligero y facil de implementar. Sigue un modelo de arquitectura de cliente-servidor. Usa metodos similares a HTTP para interactuar con los recursos. Envia codigos de estado para las respuestas.Envia codigos de estado para las respuestas. Incluye un mecanismo de descubrimiento de recursos.
+* **Websocket**: Se basa en TCP y permite corrientes de mensajes a ser enviados en ambos sentidos entre cliente y servidor, mientras se mantiene la conexion TCP abierta.
+* **DDS** (***Data Distribution Service***): Es un middleware centrado en datos para la comunicacion de dispostivo-a-dispositivo o maquina-a-maquina.
+* **XMPP** (***EXtensible Messaging and Presence Protocol***): Es un protocolo para comunicacion de tiempo real y streaming de datos XML entre entidades de red. XMPP soporta caminos de comunicacion cliente-a-servidor y servidor-a-servidor.
+
+#### Capa de Procesamiento y Almacenamiento
+
+Es responsable de procesar, almacenar y analizar los datos recopilados por los dispositivos IoT.
+<br>Los problemas que se presentan en esta capa son:
+* Procesamiento en Tiempo Real: Capacidad para procesar y analizar datos rapidamente.
+* Almacenamiento Masivo: Manejo eficiente del almacenamiento de grandes volumenes de datos.
+
+#### Capa de Gestion y Orquestacion:
+
+Se encarga de la gestion y orquestacion de recursos en la red IoT. Proporciona herramientas para la configuracion, monitoreo, actualizacion y administracion de dispositivos y aplicaciones IoT.
+<br>Esta capa tiene la funcion de gestionar los dispositivos, seguridad, actualizaciones de firmware, monitorio de rendimiento, etc..
+<br> Esta capa tiene los siguientes problemas:
+* **Configuracion y Monitoreo**: Necesidad de configurar y monitorear dispositivos de manera eficiente.
+* **Actualizacion de Firmware**: Capacidad de actualizar el software de los dispositivos de manera remota.
+
+Los protocolos de gestion de dispositivos:
+* **LwM2M**: Proporciona herramientas para la configuracion, monitoreo y administracion de dispositivos. Facilita la administracion remota del firmware de los dispositivos.
+
+![](../Teorico/Imagenes/capasDeLaIoT.png)
+
+#### Diferencias de los protocolos de IoT con los de Internet
+
+Muchos dispositivos IoT son de **Baja Potencia** y tienen recursos limitados. Por lo tanto los protocolos para IoT esta diseñados para ser ligeros y eficientes en el uso de energia y recursos. En cambio los dispositivos conectados a internet, generalmente tienen recursos relativamente abundantes en terminos de energia, capacidad de procedimiento y memoria.
+<br>La IoT se enfoca en la comunicacion entre dispositivos IoT heterogeneos en entorno especificos (hogares inteligentes, fabricas automatizadas, ciudades inteligentes, etc.). La internet esta diseñada para la comunicacion entre computadoras y servidores, facilitando el intercambio de informacion a gran escala y el acceso a servicios en linea.
+<br>Se necesitan protocolos para escalar a una gran cantidad de dispositivos IoT, gestionando trasmisiones de datos frecuentes y a menudo en tiempo real. Los protocolos de internet permiten escalar a muchos maquinas y gestionar grandes volumenes de trafico de datos, pero solo para computadoras y servidores, y no para dipositivos IoT.
+
+
+
 ---
 
 ## La Nube

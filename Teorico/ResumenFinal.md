@@ -492,6 +492,36 @@ Una nube se la puede considerar como una red jerarquica compuesta por 4 niveles:
 
 ![](../Teorico/Imagenes/tiposDeEnrutadores.png)
 
+### Sistemas Operativos para la Nube
+
+Antes de ver la pila de protocolos en la nube, es importante saber algunos conceptos sobre el computo en la nube.
+
+#### Computo en la nube
+
+* **Infraestructura como Servicio** (**IaaS**) (***Infrastructure as a Service***): Es un ambiente formado por recursos informaticos basicos que pueden ser accedidos/manejados via interfaces basadas en servicios de la nube y en herramientas. Esto incluye servidores, almacenamiento, redes, etc. Los usuarios pueden configurar y gestionar sus propios recursos informaticos. Se pueden escalar los recursos segun la necesidad del negocio.
+* **Plataforma como Servicio** (**PaaS**) (***Platform as a Service***): Es una plataforma completa para que los desarrolladores creen, desplieguen y gestionen aplicaciones sin preocuparse por la infraestructura subyacente. Proporciona herramientas y servicios para el desarrollo de aplicaciones, como bases de datos, middlewares y entornos de ejecucion.
+* **Software como Servicio**: Permite a los usuarios acceder a aplicaciones completas alojadas en la nube mediante una suscripcion, sin necesidad de instalacion o mantenimiento local. Los usuarios pueden acceder al software desde cualquier dispositivo con conexion a internet.
+
+![](../Teorico/Imagenes/computoEnLaNubeServicios.png)
+
+* **Virtualizacion**: La virtualizacion permite dividir un servidor fisico en varias maquinas virtuales, donde cada una es capaz de ejecutar su propio SO y aplicaciones. Si una maquina virtual falla, no afecta a las demas.
+  * **Hipervisor**: Es un software que permite que multiples instancias (o maquinas virtuales) se ejecuten en un solo servidor fisico.
+* **Containerizacion**: Se empaqueta el codigo de la aplicacion junto con los archivos de configuracion relacionados, librerias y dependencias requeridas para que pueda ser ejecutada. Las apliaciones son desplegadas en contenedores, cada contenedor ejecuta un proceso. Usar contenedores permite a varios servicios de la nube ejecutarse como un servidor (fisico o virtual) unico mientras se accede al mismo SO. Si un contenedor falla, no afecta a los demas.
+
+#### Capa de Red
+
+La capa de red esta formada por protocolos que facilitan la conectividad y el enrutamiento dentro de la insfraestructura de red de cada proveedor. Usa diferentes tipos de protocolos:
+* **Protocolos de Internet**: Son importantes para que los datos puedan moverse entre redes conectadas a traves de internet.
+* **Protocolos para Redes Privadas Virtuales** (**VPN**) (***Virtual Private Network***): Las VPN permiten establecer conexiones seguras entre las redes del cliente y la nube a traves de internet. Los protocolos mas comunes incluyen:
+  * ***OpenVPN***: Cifra los datos y asegura que viajen protegidos a traves de una conexion publica.
+  * ***WireGuard***: Tambien cifra las conexiones vpn, ofreciendo mayor velocidad y simplicidad.
+* **Protocolos para Conexiones Privadas entre el Cliente y Proveedor de la Nube**: Cuando las empresas necesitan conexiones mas rapidas y seguras, pueden optar por metodos privados que no usan internet. Por ejemplo: MPLS, Tuneles VPN, Conexiones Dedidacas, etc..
+
+#### Capa de Almacenamiento
+
+
+
+
 ---
 
 ## Redes Blockchain

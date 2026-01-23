@@ -735,3 +735,70 @@ Si se necesita integrar datos externos con una blockchain se usa **ChainLink** q
 
 ### Sistema Operativo para Redes Blockchain
 
+#### Capa de Infraestructura Base
+
+Proporciona la infraestructura subyancente para la creacion y operacion de blockchains. Incluye componentes fisicos y de red como internet (TCP/IP, HTTP, SSL, etc.) y enrutadores.
+
+#### Capa de Protocolo Base
+
+Esta capa es la blockchain en si misma. Tiene su propia cadena de bloques con un diseño especifico, incluyendo su propio token nativo. Es responsable de la seguirdad y el funcionamiento y la estructura de datos principal. Facilita la comunicacion entre nodos y el envio de transacciones.
+<br>Es en esta capa donde se hacen las **Transacciones**, se procesan y se validan los datos .
+
+Un **Mecanismo de Consenso** establece las reglas y mecanismos mediante los cuales los nodos llegan a un acuerdo sobre el estado del libro mayor, esto le da unos **Beneficios**:
+* Prevencion de problemas como el **Doble Gasto** al garantizar que solo una version del libro mayor sea aceptada por todos los nodos.
+* El incremento de la **Resistencia a Ataques Maliciosos** al requerir que un numero significativo de nodos coincida en el estado del sistema.
+
+Esta capa presenta unas **Limitaciones**, las blockchains de esta capa suelen enfrentar limitaciones en su capacidad para procesar un gran numero de transacciones por segundo. Esto puede resultar en tiempos de espera prolongados y tarifas elevadas, especialmente en periodos de alta demanda. Para resolver esto se definen **Soluciones de Escalabilidad**
+
+#### Capa de Comunicacion entre Redes Blockchain
+
+Se usan protocolos que facilitan la interoperabilidad y la comunicacion entre diferentes redes blockchain. Facilita la creacion de redes interconectadas. Aborda problemas como la escabilidad e introperabilidad. Como por ejemplo:
+* **Cosmos** (**La Internet de las Blockchains**): Facilita el intercambio de activos y datos sin necesidad de soluciones centralizadas. Permite que distintas blockchain se comuniquen entre si usando el ***Protocolo Interblockchain Comunication*** (**IBC**).
+
+#### Capa de Soluciones de Escalabilidad
+
+Mejora el rendimiento y la capacidad de procesamiento de transacciones al construirse sobre una blockchain existente. Permiten realizar un mayor numero de transaccionees fuera de la cadena principal, esto reduce la carga sobre la blockchain y disminuye los costos asociados. Se preocura no comprometer la seguridad proporcionada por la blockchain.
+
+Los protocolos usados en esta capa son:
+* **Rollups**: Agrupan varias transacciones en un paquete; este paquete se valida en una red secundaria y luego registran los resultados finales (como un resummen criptografico del paquete) en la blockchain del protocolo base.
+* **Cadena Laterales**: Blockchains independientes que estan conectadas a una blockchain principal. Puede procesar transacciones y ejecutar aplicaciones de manera independiente. Cuando ejecutan una transaccion, la registran en su propio libro mayor. Pueden usar sus propios protocolos y mecanismos en su propio libro mayor. Algunas cadenas laterales pueden ejecutar contratos inteligentes.
+* **Canales de Estado**: Es un entorno temporal donde dos o mas partes pueden ejecutar varias transacciones directamente entre ellas sin involucrar a la blockchain principal.Permiten transacciones rapidas y privadas entre dos partes sin necesidad de registrar una transaccion en la blockchain principal. Las transacciones se llevan a cabo fuera de la blockchain principal, lo que reduce los tiempos y costos asociados con cada operacion. Lleva el registro del estado actual de las transacciones entre las partes involucradas. Al finalizar las interacciones, el estado final del canal se registra en la blockchain principal. Solo se pagan tarifas por abrir y cerrar el canal. Las transacciones dentro del canal no son visibles publicamente; solo el estado inicial y final son visibles. Cada transaccion dentro del canal debe ser firmada por todos los participantes, lo que garantiza que no se pueda alterar el estado final sin el consentimiento mutuo. En un canal de estado, los participantes crean un contrato inteligente que define las reglas y condiciones bajo las cuales se llevaran a cabo las transacciones. Este contrato actua como un "juez" que asegura que las transacciones sean validas y que todos los participanetes cumplan con lo acordado.
+
+#### Capa de Aplicaciones
+
+Permite la ejecucion y el acceso a las aplicaciones que interactuan con la blockchain. Aqui se encuentran las aplicaciones descentralizadas (**dApps**) que operan sobre la blockchain, asi como aplicaciones no descentralizadas.
+<br>Las **dApps** tienen caracteristicas como:
+* No dependen de servidores y operan sobre la blockchain.
+* Usan contratos inteligentes y APIs para la interaccion con la blockchain.
+* Pueden seguir funcionando incluso si una parte de la red es atacada o censurada.
+* Operan sin la necesidad de intermediarios, permitiendo a los usuarios interactuar directamente con la aplicacion.
+* Son de codigo abierto.
+
+Los **Contratos Inteligentes** permiten la ejecucion automatica de acuerdos cuando se cumplen ciertas condiciones predefinidas, esto elimina la necesidad de intermediarios, lo que reduce costos y tiempos de transaccion. Cada contrato desplegado tiene una direccion unica usada para identificarlo.
+<br>Los contratos estan registrados en la blockchain, por lo que son **Inmutables** y **Transparentes**. Las partes involucradas pueden verificar las condiciones y resultados del contrato, lo que fomenta la confianza entre ellas.
+<br>Los contratos tambien pueden gestionar transacciones complejas que involucran multiples partes y condiciones. Pueden interactuar con otros contratos y dApps en la blockchain. Los contratos minimizan el riesgo de errores humanos.
+
+#### Capa de Desarrollo
+
+Proporciona las herramientas necesarias para desarrollar y desplegar aplicaciones sobre blockchain.
+
+Las tegnologias usadas usadas:
+* **APIs**: Permiten a los desarrolladores construir aplicaciones que se comunican con la blockchain sin necesidad de entender completamente su funcionamiento interno
+* **Bibliotecas**: Facilitan el desarrollo de aplicaciones descentralizadas sobre blockchains especificas. Como por ejemplo Web3.js o Eher.js.
+* **Plataforma de Desarrollo**: Entornos que permiten a los desarrolladores crear y desplegar dApps. Como Ethereum, Hyperledger Fabric, EOS y NEO.
+* **Frameworks para dAppsa**: Estructura que proporciona un conjunto de herramientas y bibliotecas para facilitar el desarrollo de dApps.
+
+Los lenguajes de programacion usados para desarrollar aplicaciones en la blockchain:
+* **Solidity**: Usado para escribir contratos inteligentes en Ethereum.
+* **JS**: Usado junto con Web3.js para interactuar con la blockchain.
+* **Python**: Usado en plataformas como Modum para desarrollar contratos inteligentes y scripts de interaccion.
+* **C++**: Usado para desarrollar nodos y aplicaciones en la blockchain como Bitcoin y Ethereum.
+* **Go**: Usado para el desarrollo de aplicaciones para varias plataformas blockchain, incluyendo hyperledger.
+
+![](../Teorico/Imagenes/sistemaOperativoParaRedesBlockchain.png)
+
+### Convenciones a Respetar
+
+![](../Teorico/Imagenes/convencionesARespetar.png)
+
+![](../Teorico/Imagenes/convencionesARespetar2.png)

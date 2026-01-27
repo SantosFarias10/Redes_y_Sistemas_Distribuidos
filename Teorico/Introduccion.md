@@ -55,7 +55,7 @@ Los **Sistemas Operativos de Redes** (SOR) estan organizadas como una **Pila de 
 El proposito de una Capa en una arquitectura multicapa (Una Arquitectura de red es un conjunto de capas y protocolos) es ofrecer ciertos servicios a las capas superiores y ocultar la implementacion a las capas superiores
 <br>Una **Interfaz Entre Capas** son las operaciones y servicios primitivos ofrecidos por una capa a capa superior.
 
-El SO se preocupa de la comunicacion de informacion, esto afecto al proposito de las capas, ya que cada capa `n` se piensa como una conversacion entre la capa `n` de una maquina con la capa `n` de otra maquina. Para especificar como es esta conversacion se usan los **Protocolos**.
+El SO se preocupa de la comunicacion de informacion, esto afecta al proposito de las capas, ya que cada capa `n` se piensa como una conversacion entre la capa `n` de una maquina con la capa `n` de otra maquina. Para especificar como es esta conversacion se usan los **Protocolos**.
 <br> Un **Protocolo de Capa `n`** son las reglas y convenciones usadas en la conversacion entre la capa `n` de una maquina y la capa `n` de otra maquina.
 
 Durante el **Envio de Mensajes** cada capa pasa los datos y la informacion de control a la copa inmediatamente inferior, hasta que se alcanza la capa mas baja.
